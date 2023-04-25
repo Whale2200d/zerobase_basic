@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS-example</title>
+</head>
+<body>
+  <span id="title">I like Front-end</span>
+    <button id="react">React</button>
+    <button id="angular">Angular</button>
+    <button id="vue">Vue</button>
+    <button id="svelte">Svelte</button>
+
+    <script>
+      const title = document.getElementById('title');
+      const react = document.getElementById('react');
+      const angular = document.getElementById('angular');
+      const vue = document.getElementById('vue');
+      const svelte = document.getElementById('svelte');
+  
+      function clicked (text) {
+        title.innerText = `I like ${text}`;
+      }
+  
+      react.addEventListener('click', (e) => clicked(e.target.innerText));
+      angular.addEventListener('click', (e) => clicked(e.target.innerText));
+      vue.addEventListener('click', (e) => clicked(e.target.innerText));
+      svelte.addEventListener('click', (e) => clicked(e.target.innerText));
+    </script>
+</body>

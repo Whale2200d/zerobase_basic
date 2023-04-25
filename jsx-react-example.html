@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function clickedButton () {
+      console.log('clicked');
+    }
+
+    // react에서는 dom을 script로 생성한다.
+    const root = document.getElementById('root');
+    const ReactButton = () => <button onClick={() => console.log('clicked')} style={{ fontSize: '16px'}}>React</button>;
+    const AngularButton = () => <button onClick={() => console.log('clicked')}>Angular</button>;
+    const VueButton = () => <button onClick={() => console.log('clicked')}>Vue</button>;
+    const SvelteButton = () => <button onClick={() => console.log('clicked')}>Svelte</button>;
+    const Title = () => <span>I like Front-end</span>;
+
+    // ReactDOM.render(react, root);
+    // const container = React.createElement('div', null, [react, angular, vue, svelte]);
+    const Container = () => 
+      <div>
+        <Title/>
+        <ReactButton/>
+        <AngularButton/>
+        <VueButton/>
+        <SvelteButton/>
+      </div>;
+    
+     
+    ReactDOM.render(<Container/>, root);
+  </script>
+</html>

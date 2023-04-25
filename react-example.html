@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+  </body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script>
+    function clickedButton () {
+      console.log('clicked');
+    }
+
+    // react에서는 dom을 script로 생성한다.
+    const root = document.getElementById('root');
+    const react = React.createElement('button', {id: 'react', onClick: clickedButton}, "리액트");
+    const angular = React.createElement('button', {id: 'angular', onClick: clickedButton}, "앵귤러");
+    const vue = React.createElement('button', {id: 'vue', onClick: clickedButton}, "뷰");
+    const svelte = React.createElement('button', {id: 'svelte', onClick: clickedButton}, "스벨트");
+
+    const title = React.createElement('span', {id: 'title'}, 'I like Front-end');
+
+    // ReactDOM.render(react, root);
+    const container = React.createElement('div', null, [title, react, angular, vue, svelte]);
+    ReactDOM.render(container, root);
+  </script>
+</html>

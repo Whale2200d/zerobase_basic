@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-example</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let titleName = "I like Front-end";
+
+    function clickedButton (text) {
+      console.log('clicked: ', text);
+      titleName = text;
+      render();
+    }
+
+    // react에서는 dom을 script로 생성한다.
+    const root = document.getElementById('root');
+    // const ReactButton = () => <button onClick={(e) => clickedButton(e.target.innerText)}>React</button>;
+    // const AngularButton = () => <button onClick={(e) => clickedButton(e.target.innerText)}>Angular</button>;
+    // const VueButton = () => <button onClick={(e) => clickedButton(e.target.innerText)}>Vue</button>;
+    // const SvelteButton = () => <button onClick={(e) => clickedButton(e.target.innerText)}>Svelte</button>;
+    // const Title = () => <span>{titleName}</span>;
+
+    const Container = () => {
+      const [title, setTitle] = React.useState("Front-end");
+
+      function clickedButton (text) {
+        console.log('clicked: ', text);
+        setTitle(text);
+      }
+
+      return (
+        <div>
+          <span>I like {title}</span>
+          <button onClick={(e) => clickedButton(e.target.innerText)}>React</button>
+          <button onClick={(e) => clickedButton(e.target.innerText)}>Angular</button>
+          <button onClick={(e) => clickedButton(e.target.innerText)}>Vue</button>
+          <button onClick={(e) => clickedButton(e.target.innerText)}>Svelte</button>
+        </div>
+      )
+    }
+    
+    function render() {
+      ReactDOM.render(<Container/>, root);
+    }
+
+    render();
+  </script>
+</html>

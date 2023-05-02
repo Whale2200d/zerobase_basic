@@ -19,12 +19,10 @@ export default function ListItem({
         <div role="button" onClick={onClickTitle} className={styles.title}>
           {data.title}
           {badges.length > 0 &&
-            badges.map((badgeProps, idx) => (
-              <Badge key={idx} {...badgeProps} />
-            ))}
+            badges.map((props, idx) => <Badge key={`${idx}`} {...props} />)}
         </div>
         <div className={styles.description}>
-          #{data.labels.number} {state} {dayjs(date).fromNow()}
+          #{data.number} {state} {dayjs(date).fromNow()} by {data.user.login}
         </div>
       </div>
     </ListItemLayout>

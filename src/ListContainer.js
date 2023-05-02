@@ -16,16 +16,17 @@ export default function ListContainer() {
 
   // const MAX_PAGE = getData().totalCount // 30 / 100 = 3.3333 ≒ 4페이지 구성해야 함
 
-  async function getData() {
-    const { data } = await axios.get(
+  async function getData(pageParam) {
+    const data = await axios.get(
       `https://api.github.com/repos/facebook/react/issues`,
+      { params: { page: pageParam } },
     )
-    setList(data)
+    setList(data.data)
   }
 
   useEffect(() => {
-    getData()
-  }, [])
+    getData(page)
+  }, [page])
 
   return (
     <>

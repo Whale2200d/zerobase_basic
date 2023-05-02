@@ -1,0 +1,23 @@
+.header {
+  padding: 16px 32px 0;
+  background-color: rgb(246, 248, 250);
+  /* height: 96px; height는 지금 잡아주는게 좋은 방식은 아니다. 차후 컨텐츠 크기에 따라 변경될 값이기 때문이다. 다만 지금은 레이아웃을 잡는 과정이므로 빈 레이어가 없도록 height를 임의로 잡아주는 것이며, 제거해야 할 값이다. */
+  box-shadow: inset 0 -1px 0 hsla(210, 18%, 87%, 1);
+}
+
+.buttonContainer {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(27, 31, 36, 0.08);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 3px;
+}

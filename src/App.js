@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.css"
+
+import Header from "./Header"
+import ListContainer from "./ListContainer"
+import Footer from "./Footer"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className={styles.nav}>Nav</div>
+      <Header />
+      <ListContainer />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+// 여러 번 사용될 수 있는 컴포넌트는 components 파일에 담고 버튼 컴포넌트로 구분한다.
+
+export default App
